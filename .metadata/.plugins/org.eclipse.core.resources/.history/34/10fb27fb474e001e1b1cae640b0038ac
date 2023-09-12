@@ -1,0 +1,5 @@
+package com.springboot.login.entity;
+
+public class Signup {
+
+}

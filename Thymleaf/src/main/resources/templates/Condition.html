@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--use elvis operator-->
+<p>
+	<span th:style="${isActive} ? 'color:green':'color:red'"
+	 th:text="${isActive} ? 'user is active':'user is inactive'"></span>
+</p>
+
+<!--if-unless statement-->
+<p th:if="${gender}==M">Male</p>
+<p th:unless="${gender}==M">Female</p>
+</body>
+</html>

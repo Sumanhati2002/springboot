@@ -1,0 +1,5 @@
+package com.springboot.sample.controller;
+
+public class HomeController {
+
+}

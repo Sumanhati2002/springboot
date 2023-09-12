@@ -1,0 +1,5 @@
+package com.springboot.hotel.controller;
+
+public class MainController {
+
+}

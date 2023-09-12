@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Iteration</title>
+</head>
+<body>
+<p>The result is:</p>
+<p th:text="${list}"></p>
+
+<ul>
+	<li th:each="n: ${list}">
+		<span th:text="${n}"></span>
+	</li>
+</ul>
+</body>
+</html>

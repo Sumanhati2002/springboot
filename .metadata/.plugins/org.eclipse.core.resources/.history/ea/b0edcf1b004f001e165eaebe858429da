@@ -1,0 +1,8 @@
+package com.springboot.login.service;
+
+import com.springboot.login.entity.LoginData;
+
+public interface LoginService {
+
+	LoginData createData(LoginData loginData);
+}

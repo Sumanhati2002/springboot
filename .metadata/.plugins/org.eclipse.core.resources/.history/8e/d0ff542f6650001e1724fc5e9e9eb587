@@ -1,0 +1,10 @@
+package com.springboot.login.service;
+
+import org.springframework.stereotype.Service;
+
+import com.springboot.login.entity.LoginData;
+@Service
+public interface LoginService {
+
+	LoginData createData(LoginData loginData);
+}

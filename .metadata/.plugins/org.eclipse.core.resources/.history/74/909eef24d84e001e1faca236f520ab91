@@ -1,0 +1,9 @@
+package com.springboot.login.repo;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.springboot.login.entity.Signup;
+
+public interface SignupRepo extends CrudRepository<Signup, Integer>{
+
+}

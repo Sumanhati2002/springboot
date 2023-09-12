@@ -1,0 +1,24 @@
+package com.springboot.hotel.entity;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Data
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class SendMassege {
+
+	private int id;
+	private String username;
+	private String email;
+	private String message;
+}
