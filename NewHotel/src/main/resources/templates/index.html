@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
 
 <head>
 	<meta charset="utf-8">
@@ -53,18 +53,21 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Home</a></li>
 					<li><a href="#about" class="page-scroll">About</a></li>
 					<li><a href="#restaurant-menu" class="page-scroll">Menu</a></li>
 					<li><a href="#portfolio" class="page-scroll">Gallery</a></li>
 					<li><a href="#team" class="page-scroll">Chefs</a></li>
 					<li><a href="#call-reservation" class="page-scroll">Contact</a></li>
-					<li><a href="#" class="page-scroll">Login</a></li>
-					<li><a href="#" class="page-scroll">Signup</a></li>
+					<li><a th:href="@{/login}" class="page-scroll">Login</a></li>
+					<li><a th:href="@{/signup}" class="page-scroll">Signup</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
 	</nav>
+	
+	
 	<!-- Header -->
 	<header id="header">
 		<div class="intro">
@@ -81,6 +84,7 @@
 			</div>
 		</div>
 	</header>
+	<div th:replace="${content}"></div>
 	<!-- About Section -->
 	<div id="about">
 		<div class="container">
@@ -120,25 +124,25 @@
 						<h2 class="menu-section-title">Breakfast & Starters</h2>
 						<hr>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Eggs </div>
 							<div class="menu-item-price"> $35 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Whole grain toast </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Cottage cheese </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Coffee </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
@@ -150,25 +154,25 @@
 						<h2 class="menu-section-title">Main Course</h2>
 						<hr>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> One Pot Tuscan Chicken Mac and Cheese </div>
 							<div class="menu-item-price"> $45 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Gigi Hadid Spicy Pasta </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Chinese Style Mango Chicken Stir Fry </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> White Sauce Pasta </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
@@ -182,25 +186,25 @@
 						<h2 class="menu-section-title">Dinner</h2>
 						<hr>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> paneer butter masala </div>
 							<div class="menu-item-price"> $45 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> potato curry </div>
 							<div class="menu-item-price"> $350 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Vegetable korma </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam.. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Dal makhani  </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
@@ -212,25 +216,25 @@
 						<h2 class="menu-section-title">Coffee & Drinks</h2>
 						<hr>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Juice </div>
 							<div class="menu-item-price"> $35 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Lemonade </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Coffee </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
 						</div>
 						<div class="menu-item">
-							<div class="menu-item-name"> Delicious Dish </div>
+							<div class="menu-item-name"> Wine </div>
 							<div class="menu-item-price"> $30 </div>
 							<div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								duis sed dapibus leo nec ornare diam. </div>
@@ -256,7 +260,7 @@
 						<li>
 							<ol class="type">
 								<li><a href="#" data-filter="*" class="active">All</a></li>
-								<li><a href="#" data-filter=".breakfast">Breakfast</a></li>
+								<li><a th:href="@{/breakfast}" >Breakfast</a></li>
 								<li><a href="#" data-filter=".lunch">Lunch</a></li>
 								<li><a href="#" data-filter=".dinner">Dinner</a></li>
 							</ol>

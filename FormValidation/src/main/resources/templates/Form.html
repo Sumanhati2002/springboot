@@ -20,36 +20,30 @@
 							<div class="card-body p-5">
 								<h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-								<form th:action="@{/processform}" method="post" >
+								<form th:action="@{/processform}" method="post" th:object="${user}">
 
 									<div class="form-outline mb-4">
 										<label class="form-label" for="form3Example1cg">Your Name</label>
-										<input type="text"
-										 id="form3Example1cg" 
-										
-										 class="form-control form-control-lg"
-										 name="username"/>
-										
+										<input type="text" id="form3Example1cg" th:field="*{username}"
+											class="form-control form-control-lg" name="username" /> <br>
+										<span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Full name
+											error</span>
 									</div>
 
 									<div class="form-outline mb-4">
 										<label class="form-label" for="form3Example3cg">Your Email</label>
-										<input type="email" 
-										id="form3Example3cg" 
-										
-										class="form-control form-control-lg"
-										name="email" />
-
+										<input type="email" id="form3Example3cg" th:field="*{email}"
+											class="form-control form-control-lg" name="email" /><br>
+										<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Full name
+											error</span>
 									</div>
 
 									<div class="form-outline mb-4">
 										<label class="form-label" for="form3Example4cg">Password</label>
-										<input type="password" 
-										id="form3Example4cg"
-										
-										class="form-control form-control-lg"
-										name="password" />
-
+										<input type="password" id="form3Example4cg" th:field="*{password}"
+											class="form-control form-control-lg" name="password" /><br>
+										<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Full name
+											error</span>
 									</div>
 									<div class="d-flex justify-content-center">
 										<button type="submit"

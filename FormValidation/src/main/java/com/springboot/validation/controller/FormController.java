@@ -1,7 +1,7 @@
 package com.springboot.validation.controller;
 
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,8 +15,9 @@ import jakarta.validation.Valid;
 public class FormController {
 
 	@GetMapping("/")
-	public String showform() {
+	public String showform(Model model) {
 		
+		model.addAttribute("user", new User());
 		return "Form";
 	}
 	
@@ -28,6 +29,9 @@ public class FormController {
 			
 			return "Form";
 		}
-		return "success";
+		else {
+			return "success";
+		}
+		
 	}
 }
