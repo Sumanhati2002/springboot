@@ -1,0 +1,67 @@
+package com.springboot.userservice.impl;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.springboot.userservice.enntity.Rating;
+import com.springboot.userservice.enntity.User;
+import com.springboot.userservice.exception.ResourceNotFoundException;
+import com.springboot.userservice.repository.UserRepo;
+import com.springboot.userservice.service.UserService;
+
+import ch.qos.logback.classic.Logger;
+
+@Service
+public class UserImpl implements UserService {
+
+	@Autowired
+	private UserRepo userRepo;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	private Logger logger=(Logger) LoggerFactory.getLogger(UserImpl.class);
+	
+	@Override
+	public User saveUser(User user) {
+		// TODO Auto-generated method stub
+		// to generate unique id
+		String randomId = UUID.randomUUID().toString();
+		user.setId(randomId);
+
+		return userRepo.save(user);
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return (List<User>) this.userRepo.findAll();
+	}
+
+	@Override
+	public User getById(String id) {
+		// TODO Auto-generated method stub
+		User user = userRepo.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("user with given id is not found on server"));
+		//fetch rating data
+		//http://localhost:8085/rating/5c620f96-a605-4c23-9040-f25bf3a064fa
+		ArrayList<Rating> ratingOfUser=restTemplate.getForObject("http://localhost:8085/rating/"+user.getId(), ArrayList.class);
+		logger.info("", ratingOfUser);
+		user.setRatings(ratingOfUser);
+		return user;
+	}
+
+}
+
+
+
+
+
+

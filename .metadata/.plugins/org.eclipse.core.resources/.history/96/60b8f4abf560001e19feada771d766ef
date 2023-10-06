@@ -1,0 +1,46 @@
+package com.springboot.userservice.impl;
+
+
+import java.util.List;
+import java.util.UUID;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.springboot.userservice.enntity.User;
+import com.springboot.userservice.exception.ResourceNotFoundException;
+import com.springboot.userservice.repository.UserRepo;
+import com.springboot.userservice.service.UserService;
+
+@Service
+public class UserImpl implements UserService {
+
+	@Autowired
+	private UserRepo userRepo;
+	@Override
+	public User saveUser(User user) {
+		// TODO Auto-generated method stub
+		// to generate unique id
+		String randomId = UUID.randomUUID().toString();
+		user.setId(randomId);
+
+		return userRepo.save(user);
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return (List<User>) this.userRepo.findAll();
+	}
+
+	@Override
+	public User getById(String id) {
+		// TODO Auto-generated method stub
+		User user = userRepo.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("user with given id is not found on server"));
+		return user;
+	}
+
+}
