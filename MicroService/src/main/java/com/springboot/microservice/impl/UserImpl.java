@@ -32,7 +32,7 @@ public class UserImpl implements UserService{
 	}
 
 	@Override
-	public User getById(int id) {
+	public User getById(String id) {
 		// TODO Auto-generated method stub
 		return userRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("user with given id is not found on server"));
 	}

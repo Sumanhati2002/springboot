@@ -1,19 +1,30 @@
  
 spring:
     datasource:
-        url: jdbc:postgresql://localhost:5432/RatingService
+        url: jdbc:postgresql://localhost:5432/RATING-SERVICE
         username: postgres
         password: root
         driverClassName: org.postgresql.Driver
+    application:
+        name: RATING-SERVICE
 
-#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
     jpa: 
        hibernate:
         ddl-auto: update
        properties:
           hibernate:
             dialect : org.hibernate.dialect.PostgreSQLDialect 
+            
+eureka:
+  instance:
+    ip-address: true
+    hostname: localhost 
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
 server:
-  port: 8083
+    port: 8085
             

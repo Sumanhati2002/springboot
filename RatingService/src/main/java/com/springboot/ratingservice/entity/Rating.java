@@ -1,10 +1,6 @@
 package com.springboot.ratingservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,12 +12,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
-@Table(name = "RATING")
+@javax.persistence.Entity
+@javax.persistence.Table(name = "RATING")
 public class Rating {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@javax.persistence.Id
 	private String ratingId;
 	private String userId;
 	private String hotelId;

@@ -1,0 +1,32 @@
+package com.springboot.userservice.enntity;
+
+import java.util.List;
+
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Entity
+@Table(name = "MicroService")
+public class User {
+
+	@Id
+	@Column(name = "ID")
+	private String id;
+	@Column(name = "NAME")
+	private String name;
+	@Column(name = "EMAIL")
+	private String email;
+	@Column(name = "ABOUT")
+	private String about;
+	
+	@Transient
+	private List<Rating> ratings;
+	}
